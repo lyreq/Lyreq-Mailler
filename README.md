@@ -3,12 +3,12 @@ What can we do with LyreqMailler? Why does LyreqMailler exist? For easy to use o
 
 **How can i use LyreqMailler ?**
 
-	    include  'lyreqmailler.php';
-	    $Lyreq =  new  LyreqMailler(port, "host", "mail", "pass");
+	include  'lyreqmailler.php';
+	$Lyreq =  new  LyreqMailler(port, "host", "mail", "pass");
 If you want tls setting to use , you must use in this way.
 
-	    include  'lyreqmailler.php';
-        $Lyreq =  new  LyreqMailler(port, "host", "mail", "pass",true);
+	include  'lyreqmailler.php';
+    $Lyreq =  new  LyreqMailler(port, "host", "mail", "pass",true);
 
 And send mail
 
