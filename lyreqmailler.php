@@ -1,4 +1,8 @@
 <?php
+//LyreqMailler v1.0 by Yasin Timur
+//contact : infoyasintimur@gmail.com
+//date : 08/2021
+
 require 'src/Exception.php';
 require 'src/PHPMailer.php';
 require 'src/SMTP.php';
