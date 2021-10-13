@@ -21,7 +21,8 @@ And send mail
 
 If you want, send mail with attachment, you can use this way.
 
-     $mailSend = $Lyreq->mailSend("senderName", "receiverName", "receiverMail", "subject", "body","attachmentPath","attachmentName");
+     $mailSend = $Lyreq->mailSend("senderName", "receiverName", "receiverMail", "subject",
+      		"body","attachmentPath","attachmentName");
      // if you want doesn't use attachment name, you can use null this parametres
         if ($mailSend['status'] ==  true) {
         echo  "Mail Send.";
