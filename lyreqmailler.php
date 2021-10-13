@@ -105,7 +105,7 @@ class LyreqMailler
             $mail->SMTPAuth = true;
             $mail->Username =  $this->senderMail;
             $mail->Password =  $this->senderPW;
-            $mail->SMTPDebug = true;
+            // $mail->SMTPDebug = true;
             if ($this->tls == true) {
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
             } else {
