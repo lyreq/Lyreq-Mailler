@@ -73,7 +73,7 @@ class LyreqMailler
     }
 
 
-    public function mailSend($senderName = "", $receiverName = "", $receiverMail, $subject, $body)
+    public function mailSend($senderName = "", $receiverName = "", $receiverMail, $subject, $body, $attch = "", $attchname = "")
     {
 
         if (empty($receiverMail)) {
@@ -105,7 +105,7 @@ class LyreqMailler
             $mail->SMTPAuth = true;
             $mail->Username =  $this->senderMail;
             $mail->Password =  $this->senderPW;
-
+            $mail->SMTPDebug = true;
             if ($this->tls == true) {
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
             } else {
@@ -121,19 +121,24 @@ class LyreqMailler
             $mail->isHTML(true);
             $mail->Subject = $subject;
             $mail->Body    = $body;
+            if (!empty($attch)) {
+                if (empty($attchname)) {
+                    $mail->addAttachment($attch);
+                } else {
+                    $mail->addAttachment($attch, $attchname);
+                }
+            }
 
             $mail->send();
             $returnMessages = errorMessages(0);
             $returnData['status'] = true;
             $returnData['messages'] = $returnMessages;
             return $returnData;
-   
         } catch (Exception $e) {
             $returnMessages = "You entered your mail settings incorrectly. Error Description:{$mail->ErrorInfo}";
             $returnData['status'] = false;
             $returnData['messages'] = $returnMessages;
             return $returnData;
-       
         }
     }
 }
